@@ -30,8 +30,6 @@
   }
   
   .overlay-div {
-    width: 200px;
-    height: 100px;
     position: absolute;
     top: calc(30vh - 50px);
     left: 50%;
@@ -45,4 +43,12 @@
     background-size: cover; 
     background-position: center; 
     height: 30vh; 
+  }
+  @media only screen and (max-width: 688px) {
+    .overlay-div{
+        width: auto;
+        height: auto;
+        top: calc(30vh - 120px);
+    }
+
   }

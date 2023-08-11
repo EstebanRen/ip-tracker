@@ -22,6 +22,7 @@ export class IpMapComponent {
   }
 
   initializeMap(): void {
+    console.log(this.ipData)
     this.map = new Map('map').setView([this.ipData.location.lat, this.ipData.location.lng], 13);
     tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
@@ -29,8 +30,11 @@ export class IpMapComponent {
     }).addTo(this.map);
     const iconMarket = icon({
       iconUrl: '/../../assets/images/icon-location.svg',
+      iconSize:     [38, 45], 
+      iconAnchor:   [22, 44], 
+      popupAnchor:  [-3, -70] 
     });
-    marker([this.ipData.location.lat, this.ipData.location.lng], { icon: iconMarket }).addTo(this.map);
+    marker([this.ipData.location.lat, this.ipData.location.lng],{icon: iconMarket}).addTo(this.map);
   }
 
    updateMap(): void {

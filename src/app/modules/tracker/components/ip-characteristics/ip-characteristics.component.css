@@ -36,3 +36,22 @@
     font-size: 18px;
   }
   
+  @media only screen and (max-width: 992px) {
+    .section {width: 100px;}
+  } 
+
+  @media only screen and (max-width: 688px) {
+    .container{
+        flex-direction: column;
+        width: 100%;
+    }
+    .section:nth-child(n+2) {
+        border-left: 0px; 
+        padding-left: 0;
+    }
+    .section{
+        text-align: center;
+        width: 80vw;
+        margin: 10px;
+    }
+  }

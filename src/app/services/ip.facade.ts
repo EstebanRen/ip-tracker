@@ -3,6 +3,7 @@ import { IpService } from './ip-api.service';
 import { IpStateService } from './ip-state.service';
 import { IpData } from '../entities/model-Ip';
 import { MatDialog } from '@angular/material/dialog';
+import { PopUpMessageComponent } from '../components/pop-up-message/pop-up-message.component';
 
 @Injectable()
 export class IpFacadeService {
@@ -13,7 +14,6 @@ export class IpFacadeService {
     private dialog: MatDialog
   ) {
     this.ipService.getIpFromApi().subscribe((response: IpData) => {
-      // console.log(response)
       this.mappingDataFromService(response);
     }, (error: any) => {
       this.error(error);
@@ -32,14 +32,14 @@ export class IpFacadeService {
     this.ipState.setIpSearch(ip);
   }
   error(error: any): void {
-    // const dialogRef = this.dialog.open(PopUpMessageComponent, {
-    //   width: '100%',
-    //   panelClass: 'modal-pricing-plans-page',     
-    //   data: {
-    //     title: 'Upss!',
-    //     message: 'Estamos teniendo problemas técnicos, por favor espera mientras traemos tus vuelos de vuelta',
-    //   }
-    // });
+    const dialogRef = this.dialog.open(PopUpMessageComponent, {
+      width: '100%',
+      panelClass: 'modal-pricing-plans-page',     
+      data: {
+        title: 'Upss!',
+        message: 'Estamos teniendo problemas técnicos, por favor espera mientras traemos tus vuelos de vuelta',
+      }
+    });
   }
   searchNewIp(ip:string){
     this.ipService.getIpFromApi(ip).subscribe((response: IpData) => {
