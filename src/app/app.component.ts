@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IpFacadeService } from './services/ip.facade';
 
 @Component({
   selector: 'app-root',

@@ -1,0 +1,11 @@
+<div class="container" *ngIf="this.ipSearch">
+  <div class="header background-image" >
+    <app-ip-form  [ipSearch]="ipSearch" (ipSearchOut)="searchIp($event)"> </app-ip-form>
+  </div>
+  <div class="map">
+    <app-ip-map [ipData]="ipData"> </app-ip-map>
+  </div>
+  <div class="overlay-div">
+    <app-ip-characteristics [ipData]="ipData"> </app-ip-characteristics>
+  </div>
+</div>

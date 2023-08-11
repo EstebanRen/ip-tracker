@@ -1,0 +1,26 @@
+<div class="container" *ngIf="this.ipData">
+  <div class="section">
+    <span class="section-title">IP ADDRESS</span>
+    <span class="section-text">
+      {{ipData.ip}} 
+    </span>
+  </div>
+  <div class="section">
+    <span class="section-title">LOCATION</span>
+    <span class="section-text">
+      {{ipData.location.city}} 
+    </span>
+  </div>
+  <div class="section">
+    <span class="section-title">TIMEZONE</span>
+    <span class="section-text">
+      UTC{{ipData.location.timezone}}
+    </span>
+  </div>
+  <div class="section">
+    <span class="section-title">ISP</span>
+    <span class="section-text">
+      {{ipData.isp}}
+    </span>
+  </div>
+</div>
